@@ -1,0 +1,26 @@
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline author:t broken-links:nil c:nil
+#+OPTIONS: creator:nil d:(not "LOGBOOK") date:t e:t email:nil f:t inline:t num:t p:nil pri:nil
+#+OPTIONS: prop:nil stat:t tags:t tasks:t tex:t timestamp:t title:t toc:t todo:t |:t
+#+TITLE: Finding Lane Lines on the road
+#+DATE: <2017-11-25 Sat>
+#+AUTHOR: Cha Chen
+#+EMAIL: cha@Chas-MacBook-Pro.local
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+#+EXCLUDE_TAGS: noexport
+#+CREATOR: Emacs 25.3.1 (Org mode 9.1.3)
+* Goal 
+  Build a pipeline to find the lane lines on the road. (fig: [[fig:lane-lines]])
+  #+CAPTION: Example for finding the lane lines on the road
+  #+NAME:   fig:lane-lines
+  [[./examples/line-segments-example.jpg]]
+* Step 
+ 1. convert the image to the grayscale, hence it is easier to find the lanes.
+ 2. add gaussian blur on the grayscale image to make it "smooth".
+ 3. run the canny algorithm on top of the smoothed image to find all the "edge" by calculate the gradient.
+ 4. clip the interesting region, the region that contains useful information.
+ 5. convert the edge image to the hough space to find the lane line, i.e. the straight line that go through these edge points.
+* Short Coming    
+  Everything is hard coded so that we may need to tune the parameters for every single set of road image.
+* Improvements
+  Collecting a dataset with labeled lane lines and build an algorithm to auto fit the parameters instead of manually tune it every single time.

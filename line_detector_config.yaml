@@ -1,0 +1,18 @@
+gaussian_blur:
+  kernel_size: 7
+
+canny:
+  low_threshold: 10
+  high_threshold: 20
+
+mask:
+  - !!python/tuple [10,20]
+  - !!python/tuple [10,20]
+  - !!python/tuple [10,20]
+
+hough_lines:
+  rho: 1
+  theta: 2
+  threshold: 3
+  min_line_len: 4
+  max_line_gap: 5
