@@ -24,3 +24,5 @@
   Everything is hard coded so that we may need to tune the parameters for every single set of road image.
 * Improvements
   Collecting a dataset with labeled lane lines and build an algorithm to auto fit the parameters instead of manually tune it every single time.
+* NOTE
+  Line detector code located in the line_detector.py file.
